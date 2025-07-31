@@ -66,19 +66,30 @@ class VehicleInfo{
 }
 
 public class Parking_System {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Number of Slots");
-        int numberofSlots = sc.nextInt();
+        // System.out.println("Enter Number of Slots");
+        int numberofSlots = 10;
         boolean[] slots = new boolean[numberofSlots+1];
         VehicleInfo vehicleObject = new VehicleInfo();
         List<VehicleInfo> vehicleInfos = new ArrayList<>();
         boolean isvalid = true;
+        for (int i = 0; i < 5; i++) {
+            Thread.sleep(100);
+            System.out.print("<");
+        }
+        System.out.print("WELCOME");
+        for (int i = 0; i < 5; i++) {
+            Thread.sleep(100);
+            System.out.print(">");
+        }
+        System.out.println();
         while (isvalid) {
+            System.out.println();
             System.out.println("1.Park Vehicle");
             System.out.println("2.Remove Vehicle");
             System.out.println("3.View Vehicle");
-            System.out.println("4.View");
+            System.out.println("4.exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -112,14 +123,23 @@ public class Parking_System {
                         vehicleObject.RemoveVehicleBySlotNumber(slotNumberToRemove, vehicleInfos);
                         slots[slotNumberToRemove] = false;
                     }else{
-                        System.out.println("Slot already empty");
+                        System.out.println("Slot Empty No vehicle to remove");
                     }
                     break;
                 case 3:
-                    System.out.println("nothing");
+                    System.out.println("Parking Slot Details");
+                    for (int slotIndex = 1; slotIndex <= numberofSlots; slotIndex++) {
+                        if(!slots[slotIndex]){
+                            System.out.println("Parking Slot "+slotIndex+" Available");
+                        }else{
+                            System.out.println("Parking Slot "+slotIndex+" Full");
+                        }
+                    }
                     break;
                 case 4:
-                    System.out.println("nothing");
+                    System.out.println("<<<<<<<Exit>>>>>>");
+                    isvalid = false;
+                    Thread.sleep(3000);
                     break;
                 default:
                     System.out.println("nothing");
