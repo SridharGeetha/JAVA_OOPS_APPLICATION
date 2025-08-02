@@ -1,8 +1,8 @@
-🚗 Problem: Console-Based Parking Lot Management System
+Problem: Console-Based Parking Lot Management System
 Problem Statement:
 You need to build a Parking Lot Management System where users can perform operations like parking a vehicle, removing it, and viewing the current status of the parking lot.
 
-🔧 Requirements:
+* Requirements:
 Parking Lot Structure:
 
 The parking lot has a fixed number of slots (user can set the size at the beginning).
@@ -19,15 +19,15 @@ Color
 
 Features to Implement (via menu-driven console UI):
 
-1️⃣ Park a Vehicle
+1️.Park a Vehicle
 
-2️⃣ Remove a Vehicle from a Slot
+2️.Remove a Vehicle from a Slot
 
-3️⃣ View Parking Lot Status
+3️.View Parking Lot Status
 
-4️⃣ Exit
+4️.Exit
 
-🧠 Constraints:
+*Constraints:
 Always park the vehicle in the lowest available slot.
 
 If the parking lot is full, print: "Parking Lot is Full!"
